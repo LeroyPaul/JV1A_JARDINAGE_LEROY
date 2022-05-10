@@ -1,8 +1,10 @@
 #ifndef PLANTE_H
 #define PLANTE_H
 
+using namespace std;
 #include <string>
 #include <vector>
+
 
 class Plante{
 
@@ -10,6 +12,12 @@ class Plante{
 
         string _nom;
         string _espece;
+        int _sante = 20;
+        int _taille = 0;
+        int _nbFeuille = 8;
+        int _soif = 7;
+        int _pousse = 0;
+        bool _engrais = false;
         
     public:
         string getNom();         
@@ -20,16 +28,22 @@ class Plante{
 
         int getTaille();
         
-        void arroser();
+        int arroser();
 
-        void couper();
+        int couper();
         
-        void engrais();
+        bool engrais();
+
+        int nouveauJour();
+
+        int pousse();
+
+        void inspecter();
 
         
         Plante();
-        // initialise la grille avec les cases toutes à 0
-        Plante(char nom, char espece);
+
+        Plante(string nom, string espece);
 };
 
 #endif
